@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEAD ZONE — Zombie Shooter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== START SCREEN ===== -->
+  <div id="screen-start" class="screen active">
+    <div class="scanlines"></div>
+    <div class="start-content">
+      <div class="logo-container">
+        <div class="logo-sub">— SURVIVAL HORROR —</div>
+        <h1 class="logo-title">DEAD<br/><span>ZONE</span></h1>
+        <div class="logo-tagline">The dead walk. You shoot.</div>
+      </div>
+      <div class="controls-info">
+        <div class="ctrl-row"><span class="key">WASD</span><span>เดิน</span></div>
+        <div class="ctrl-row"><span class="key">MOUSE</span><span>เล็งยิง</span></div>
+        <div class="ctrl-row"><span class="key">LMB</span><span>ยิง</span></div>
+        <div class="ctrl-row"><span class="key">R</span><span>เติมกระสุน</span></div>
+      </div>
+      <button id="btn-start" class="btn-primary">▶ เริ่มเกม</button>
+      <div class="blink-text">INSERT COIN TO CONTINUE</div>
+    </div>
+  </div>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <div id="screen-game" class="screen">
+    <div class="scanlines"></div>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div class="hud-left">
+        <div class="hud-label">SCORE</div>
+        <div id="hud-score" class="hud-value">000000</div>
+      </div>
+      <div class="hud-center">
+        <div class="hud-label">HP</div>
+        <div id="hud-hp-bar">
+          <div id="hud-hp-fill"></div>
+        </div>
+        <div id="hud-hp-text">100 / 100</div>
+      </div>
+      <div class="hud-right">
+        <div class="hud-label">AMMO</div>
+        <div id="hud-ammo" class="hud-value">30 / 90</div>
+        <div id="hud-reload-bar-wrap">
+          <div id="hud-reload-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave Banner -->
+    <div id="wave-banner" class="wave-banner hidden">
+      <span id="wave-text">WAVE 1</span>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="game-canvas"></canvas>
+  </div>
+
+  <!-- ===== GAME OVER SCREEN ===== -->
+  <div id="screen-gameover" class="screen">
+    <div class="scanlines"></div>
+    <div class="gameover-content">
+      <div class="gameover-title">GAME OVER</div>
+      <div class="gameover-sub">YOU HAVE BEEN CONSUMED</div>
+      <div class="gameover-stats">
+        <div class="stat-row"><span>คะแนนสุดท้าย</span><span id="go-score">0</span></div>
+        <div class="stat-row"><span>ซอมบี้ที่กำจัด</span><span id="go-kills">0</span></div>
+        <div class="stat-row"><span>เวฟที่ถึง</span><span id="go-wave">1</span></div>
+      </div>
+      <button id="btn-restart" class="btn-primary">↺ เล่นใหม่</button>
+      <button id="btn-menu" class="btn-secondary">⌂ เมนูหลัก</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
